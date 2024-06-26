@@ -41,6 +41,8 @@ export const GlobalStyle = createGlobalStyle`
     p {
     margin: 0;
     font-family: 'Roboto Slab', serif;
+
+    color: ${p => p.theme.colors.text};
     }
     
     ul,
