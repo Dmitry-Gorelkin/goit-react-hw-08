@@ -12,7 +12,7 @@ export const Header = () => {
         <Section>
           <HeaderContrainer>
             <Navigation />
-            {/* <AuthNav /> */}
+            <AuthNav />
             <UserMenu />
           </HeaderContrainer>
         </Section>
