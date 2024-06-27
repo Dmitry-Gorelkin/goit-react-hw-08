@@ -1,7 +1,11 @@
 export const LoginForm = () => {
+  const handlSubmit = e => {
+    e.preventDefault();
+  };
+
   return (
     <div>
-      <form autoComplete="off">
+      <form autoComplete="off" onSubmit={handlSubmit}>
         <label htmlFor="useremail">Email</label>
         <input type="email" id="useremail" />
 

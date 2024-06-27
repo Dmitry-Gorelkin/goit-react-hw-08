@@ -1,7 +1,11 @@
 export const RegistrationForm = () => {
+  const handlSubmit = e => {
+    e.preventDefault();
+  };
+
   return (
     <div>
-      <form autoComplete="off">
+      <form autoComplete="off" onSubmit={handlSubmit}>
         <label htmlFor="username">Username</label>
         <input type="text" id="username" />
 
