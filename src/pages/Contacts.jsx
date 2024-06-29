@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet';
+import { NewContact } from '../components/NewContact/NewContact';
 
 export const Contacts = () => {
   return (
@@ -6,7 +7,7 @@ export const Contacts = () => {
       <Helmet>
         <title>Contacts</title>
       </Helmet>
-      <h2>Contacts</h2>
+      <NewContact />
       <div>Filter</div>
       <div>New Contsct</div>
       <div>Contscts List</div>

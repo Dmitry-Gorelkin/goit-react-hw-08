@@ -21,9 +21,10 @@ export const FormContrainer = styled.form`
 
 export const FormLabel = styled.label`
   display: flex;
-
   flex-direction: column;
+
   gap: 10px;
+
   text-transform: uppercase;
 `;
 
@@ -78,6 +79,8 @@ export const FormButton = styled.button`
   padding: 10px;
 
   cursor: pointer;
+
+  text-transform: uppercase;
 
   border: none;
   border-radius: 4px;

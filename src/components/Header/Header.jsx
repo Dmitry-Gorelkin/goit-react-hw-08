@@ -13,7 +13,7 @@ export const Header = () => {
           <HeaderContrainer>
             <Navigation />
             <AuthNav />
-            <UserMenu />
+            {/* <UserMenu /> */}
           </HeaderContrainer>
         </Section>
       </Container>
