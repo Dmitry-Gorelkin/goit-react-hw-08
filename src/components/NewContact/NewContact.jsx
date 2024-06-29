@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
 import { ContactForm } from '../ContactForm/ContactForm';
-import { ModalContrainer, ModalContrainerIcon } from './NewContact.style';
 
 const customStyles = {
   overlay: {
@@ -38,10 +37,7 @@ export const NewContact = () => {
       </button>
 
       <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="New Contact">
-        <ModalContrainer>
-          <ContactForm closeModal={closeModal} />
-          <ModalContrainerIcon onClick={closeModal} />
-        </ModalContrainer>
+        <ContactForm closeModal={closeModal} />
       </Modal>
     </>
   );
