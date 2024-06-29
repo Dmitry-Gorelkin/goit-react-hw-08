@@ -31,6 +31,7 @@ export const FormLabel = styled.label`
 export const FormInput = styled.input`
   display: block;
   width: 100%;
+  height: 45px;
 
   outline: none;
 
@@ -75,6 +76,7 @@ export const FormButton = styled.button`
   align-items: center;
 
   width: 100%;
+  height: 45px;
 
   padding: 10px;
 

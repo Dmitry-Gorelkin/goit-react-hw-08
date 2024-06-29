@@ -8,6 +8,7 @@ import {
   FormButton,
 } from '../UI/Form/Form.styled';
 import { LoginFormContrainer } from './LoginForm.styled';
+import { LoaderRings } from '../UI/LoaderRings/LoaderRings';
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -44,6 +45,9 @@ export const LoginForm = () => {
         </FormLabel>
 
         <FormButton type="submit">Log In</FormButton>
+        <FormButton type="submit">
+          <LoaderRings />
+        </FormButton>
       </FormContrainer>
     </LoginFormContrainer>
   );
