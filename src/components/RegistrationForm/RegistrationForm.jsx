@@ -1,22 +1,51 @@
+import {
+  FormContrainer,
+  FormLabel,
+  FormInput,
+  FormButton,
+  FormInputContrainer,
+  FormInputIconVisibilityPassword,
+} from '../UI/Form/Form.styled';
+import { useState } from 'react';
+import { RegistrationFormContrainer } from './RegistrationForm.styled';
+
 export const RegistrationForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const handlSubmit = e => {
     e.preventDefault();
   };
 
+  const togglePasswordVisible = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
-    <div>
-      <form autoComplete="off" onSubmit={handlSubmit}>
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" />
+    <RegistrationFormContrainer>
+      <FormContrainer autoComplete="off" onSubmit={handlSubmit}>
+        <FormLabel>
+          Name
+          <FormInput type="text" name="username" required />
+        </FormLabel>
 
-        <label htmlFor="useremail">Email</label>
-        <input type="email" id="useremeail" />
+        <FormLabel>
+          Email
+          <FormInput type="email" name="useremeail" required />
+        </FormLabel>
 
-        <label htmlFor="userpassword">Password</label>
-        <input type="password" id="userpassword" />
+        <FormLabel>
+          Password
+          <FormInputContrainer>
+            <FormInput type={showPassword ? 'text' : 'password'} name="password" required />
+            <FormInputIconVisibilityPassword
+              onClick={togglePasswordVisible}
+              visible={showPassword}
+            />
+          </FormInputContrainer>
+        </FormLabel>
 
-        <button>Registration</button>
-      </form>
-    </div>
+        <FormButton>Registration</FormButton>
+      </FormContrainer>
+    </RegistrationFormContrainer>
   );
 };
