@@ -1,4 +1,5 @@
-import { FormContrainer, FormLabel, FormInput, FormButton } from '../UI/Form/Form.styled';
+import { Button } from '../UI/Button/Button.styled';
+import { FormContrainer, FormLabel, FormInput } from '../UI/Form/Form.styled';
 import { ContactFormContrainer, ContactFormCloseIcon } from './ContactForm.styled';
 
 export const ContactForm = ({ closeModal }) => {
@@ -20,7 +21,7 @@ export const ContactForm = ({ closeModal }) => {
           <FormInput type="tel" name="number" id="" required />
         </FormLabel>
 
-        <FormButton type="submit">Add Contaact</FormButton>
+        <Button type="submit">Add Contaact</Button>
       </FormContrainer>
       <ContactFormCloseIcon onClick={closeModal} />
     </ContactFormContrainer>

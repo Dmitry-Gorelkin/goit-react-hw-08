@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
 import { ContactForm } from '../ContactForm/ContactForm';
+import { NewContactContrainer } from './NewContact.style';
+import { Button } from '../UI/Button/Button.styled';
 
 const customStyles = {
   overlay: {
@@ -31,14 +33,14 @@ export const NewContact = () => {
   };
 
   return (
-    <>
-      <button type="butten" onClick={openModal}>
+    <NewContactContrainer>
+      <Button type="butten" onClick={openModal}>
         Add Contact
-      </button>
+      </Button>
 
       <Modal isOpen={modalIsOpen} style={customStyles} contentLabel="New Contact">
         <ContactForm closeModal={closeModal} />
       </Modal>
-    </>
+    </NewContactContrainer>
   );
 };

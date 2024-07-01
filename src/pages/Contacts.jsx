@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet';
-import { NewContact } from '../components/NewContact/NewContact';
+import { ContactActions } from '../components/ContactActions/ContactActions';
+import { ContactList } from '../components/ContactList/ContactList';
 
 export const Contacts = () => {
   return (
@@ -7,10 +8,8 @@ export const Contacts = () => {
       <Helmet>
         <title>Contacts</title>
       </Helmet>
-      <NewContact />
-      <div>Filter</div>
-      <div>New Contsct</div>
-      <div>Contscts List</div>
+      <ContactActions />
+      <ContactList />
     </>
   );
 };

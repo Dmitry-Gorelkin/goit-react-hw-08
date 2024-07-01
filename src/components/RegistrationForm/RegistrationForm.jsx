@@ -2,12 +2,12 @@ import {
   FormContrainer,
   FormLabel,
   FormInput,
-  FormButton,
   FormInputContrainer,
   FormInputIconVisibilityPassword,
 } from '../UI/Form/Form.styled';
 import { useState } from 'react';
 import { RegistrationFormContrainer } from './RegistrationForm.styled';
+import { Button } from '../UI/Button/Button.styled';
 
 export const RegistrationForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -44,7 +44,7 @@ export const RegistrationForm = () => {
           </FormInputContrainer>
         </FormLabel>
 
-        <FormButton>Registration</FormButton>
+        <Button>Registration</Button>
       </FormContrainer>
     </RegistrationFormContrainer>
   );
