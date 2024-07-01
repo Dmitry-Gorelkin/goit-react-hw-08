@@ -11,10 +11,27 @@ export const ContactCardContrainer = styled.li`
 
   border: 1px ridge ${p => p.theme.colors.backgroundSecondary};
   border-radius: 8px;
-  /* border-color: ${p => p.theme.colors.backgroundSecondary}; */
-  /* border-style: solid; */
 
-  /* box-shadow: 1px 1px 2px 2px ${p => p.theme.colors.backgroundSecondary}; */
+  @media screen and (min-width: 768px) {
+    padding: 10px 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+  }
+`;
+
+export const ContactCardText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`;
+
+export const ContactCardName = styled.p`
+  color: ${p => p.theme.colors.text};
+`;
+
+export const ContactCardNumber = styled.p`
+  color: ${p => p.theme.colors.textSecondary};
 `;
 
 export const ContactCardBtn = styled.li`

@@ -1,20 +1,26 @@
 import { ButtonIcon } from '../UI/ButtonIcon/ButtonIcon';
 import { CiTrash, CiEdit } from 'react-icons/ci';
-import { ContactCardContrainer, ContactCardBtn } from './ContactCard.styled';
+import {
+  ContactCardContrainer,
+  ContactCardText,
+  ContactCardName,
+  ContactCardNumber,
+  ContactCardBtn,
+} from './ContactCard.styled';
 
 export const ContactCard = ({ name, number }) => {
   return (
     <ContactCardContrainer>
-      <div>
-        <p>{name}</p>
-        <p>{number}</p>
-      </div>
+      <ContactCardText>
+        <ContactCardName>{name}</ContactCardName>
+        <ContactCardNumber>{number}</ContactCardNumber>
+      </ContactCardText>
       <ContactCardBtn>
         <ButtonIcon>
-          <CiTrash size={'100%'} />
+          <CiEdit size={'100%'} />
         </ButtonIcon>
         <ButtonIcon>
-          <CiEdit size={'100%'} />
+          <CiTrash size={'100%'} />
         </ButtonIcon>
       </ContactCardBtn>
     </ContactCardContrainer>
