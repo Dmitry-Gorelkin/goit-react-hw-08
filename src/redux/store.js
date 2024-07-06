@@ -1,9 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
+// import { configureStore } from '@reduxjs/toolkit';
 
-export const store = configureStore({
-  reduser: {
-    auth: '',
-    contacts: [],
-    filter: '',
-  },
-});
+// export const store = configureStore({
+//   reduser: {
+//     auth: '',
+//     contacts: [],
+//     filter: '',
+//   },
+// });
