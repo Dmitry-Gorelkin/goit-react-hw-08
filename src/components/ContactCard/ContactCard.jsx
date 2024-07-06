@@ -7,8 +7,12 @@ import {
   ContactCardNumber,
   ContactCardBtn,
 } from './ContactCard.styled';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/store';
 
-export const ContactCard = ({ name, number }) => {
+export const ContactCard = ({ name, number, id }) => {
+  const dispatch = useDispatch();
+
   return (
     <ContactCardContrainer>
       <ContactCardText>
@@ -19,7 +23,7 @@ export const ContactCard = ({ name, number }) => {
         <ButtonIcon>
           <CiEdit size={'100%'} />
         </ButtonIcon>
-        <ButtonIcon>
+        <ButtonIcon onClick={() => dispatch(deleteContact(id))}>
           <CiTrash size={'100%'} />
         </ButtonIcon>
       </ContactCardBtn>

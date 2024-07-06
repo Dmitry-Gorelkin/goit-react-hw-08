@@ -14,7 +14,7 @@ export const Layout = () => {
       <Header />
       <Container>
         <Section>
-          <Suspense>
+          <Suspense fallback={null}>
             <Outlet />
           </Suspense>
         </Section>
