@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 import { ContactActions } from '../components/ContactActions/ContactActions';
 import { ContactList } from '../components/ContactList/ContactList';
 
-export const Contacts = () => {
+const Contacts = () => {
   return (
     <>
       <Helmet>
@@ -13,3 +13,5 @@ export const Contacts = () => {
     </>
   );
 };
+
+export default Contacts;

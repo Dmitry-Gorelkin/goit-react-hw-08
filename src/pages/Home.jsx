@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
       <Helmet>
@@ -10,3 +10,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

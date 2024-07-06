@@ -12,3 +12,5 @@ export const LogIn = () => {
     </>
   );
 };
+
+export default LogIn;
