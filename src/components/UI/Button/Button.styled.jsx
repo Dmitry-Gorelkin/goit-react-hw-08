@@ -24,4 +24,8 @@ export const Button = styled.button`
   &:hover {
     background-color: ${p => p.theme.colors.bthHover};
   }
+
+  &:disabled {
+    background-color: ${p => p.theme.colors.bthDisabled};
+  }
 `;

@@ -1,10 +1,11 @@
 import { ContactCard } from '../ContactCard/ContactCard';
-import { Section } from '../UI/Section/Section.styled';
-import { ContactListContrainer } from './ContactList.styled';
 import { useSelector } from 'react-redux';
+import { Section } from '../UI/Section/Section.styled';
+import { selectVisibleContacts } from '../../redux/conytacts/selectors';
+import { ContactListContrainer } from './ContactList.styled';
 
 export const ContactList = () => {
-  const contacts = useSelector(s => s.contacts);
+  const contacts = useSelector(selectVisibleContacts);
 
   return (
     <Section>

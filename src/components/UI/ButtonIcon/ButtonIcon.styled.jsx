@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonIcon = styled.div`
+export const ButtonIcon = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +9,7 @@ export const ButtonIcon = styled.div`
 
   padding: 2px;
 
+  border: none;
   border-radius: 4px;
 
   cursor: pointer;
@@ -26,5 +27,8 @@ export const ButtonIcon = styled.div`
 
   &:hover {
     background-color: ${p => p.theme.colors.bthHover};
+  }
+  &:disabled {
+    background-color: ${p => p.theme.colors.bthDisabled};
   }
 `;

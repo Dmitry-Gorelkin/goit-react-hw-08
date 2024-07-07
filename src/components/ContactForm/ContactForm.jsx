@@ -1,27 +1,33 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '../UI/Button/Button.styled';
 import { FormContrainer, FormLabel, FormInput } from '../UI/Form/Form.styled';
 import { ContactFormContrainer, ContactFormCloseIcon } from './ContactForm.styled';
-import { addContact } from '../../redux/store';
-
-import { nanoid } from '@reduxjs/toolkit';
+import toast from 'react-hot-toast';
+import { addContacts } from '../../redux/conytacts/operetion.js';
+import { selectIsLoading } from '../../redux/conytacts/selectors.js';
+import { LoaderRings } from '../UI/LoaderRings/LoaderRings';
 
 export const ContactForm = ({ closeModal }) => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
 
   const handlSubmit = e => {
     e.preventDefault();
-    const { name, number } = e.target.elements;
+    const { name, number } = e.target;
 
     dispatch(
-      addContact({
+      addContacts({
         name: name.value,
         number: number.value,
-        id: nanoid(),
       })
-    );
-
-    closeModal();
+    )
+      .unwrap()
+      .then(() => {
+        closeModal();
+      })
+      .catch(() => {
+        toast.error('Oops! Something Went Wrong');
+      });
   };
   return (
     <ContactFormContrainer>
@@ -36,9 +42,11 @@ export const ContactForm = ({ closeModal }) => {
           <FormInput type="tel" name="number" id="" required />
         </FormLabel>
 
-        <Button type="submit">Add Contaact</Button>
+        <Button type="submit" disabled={isLoading}>
+          {isLoading ? <LoaderRings /> : 'Add Contaact'}
+        </Button>
       </FormContrainer>
-      <ContactFormCloseIcon onClick={closeModal} />
+      {!isLoading && <ContactFormCloseIcon onClick={closeModal} />}
     </ContactFormContrainer>
   );
 };
