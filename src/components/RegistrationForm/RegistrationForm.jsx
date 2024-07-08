@@ -11,7 +11,7 @@ import { RegistrationFormContrainer } from './RegistrationForm.styled';
 import { Button } from '../UI/Button/Button.styled';
 import { LoaderRings } from '../UI/LoaderRings/LoaderRings';
 import { selectUserIsLoading } from '../../redux/auth/selectors';
-import { registation } from '../../redux/auth/operations';
+import { register } from '../../redux/auth/operations';
 import toast from 'react-hot-toast';
 
 export const RegistrationForm = () => {
@@ -22,7 +22,7 @@ export const RegistrationForm = () => {
   const handlSubmit = e => {
     e.preventDefault();
     const { name, email, password } = e.target;
-    dispatch(registation({ name: name.value, email: email.value, password: password.value }))
+    dispatch(register({ name: name.value, email: email.value, password: password.value }))
       .unwrap()
       .catch(() => {
         toast.error('Oops! Something Went Wrong');

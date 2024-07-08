@@ -24,7 +24,7 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route
-          path="registration"
+          path="register"
           element={<RestrictedRoute redirectTo="/contacts" component={<Registration />} />}
         />
         <Route
