@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { Container } from './UI/Conteiner/Container.styled';
 import { Section } from './UI/Section/Section.styled';
-import { Header } from './Header/Header';
+import { AppBar } from './AppBar/AppBar';
 import { useSelector } from 'react-redux';
 import { selectUserIsRefreshing } from '../redux/auth/selectors';
 import { LoaderPuff } from './UI/LoaderPuff/LoaderPuff';
@@ -16,7 +16,7 @@ export const Layout = () => {
       <Helmet>
         <title>Phone book</title>
       </Helmet>
-      <Header />
+      <AppBar />
       <Container>
         <Section>
           <Suspense fallback={null}>{isRefreshing ? <LoaderPuff /> : <Outlet />}</Suspense>

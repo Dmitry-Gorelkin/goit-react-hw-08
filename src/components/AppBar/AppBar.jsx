@@ -4,23 +4,23 @@ import { Navigation } from '../Navigation/Navigation';
 import { Container } from '../UI/Conteiner/Container.styled';
 import { Section } from '../UI/Section/Section.styled';
 import { UserMenu } from '../UserMenu/UserMenu';
-import { HeaderBox, HeaderContrainer } from './Header.styled';
+import { AppBarBox, AppBarContrainer } from './AppBar.styled';
 import { selectUserIsLoggedIn, selectUserIsRefreshing } from '../../redux/auth/selectors';
 
-export const Header = () => {
+export const AppBar = () => {
   const isLoggedIn = useSelector(selectUserIsLoggedIn);
   const isRefreshing = useSelector(selectUserIsRefreshing);
 
   return (
-    <HeaderBox>
+    <AppBarBox>
       <Container>
         <Section>
-          <HeaderContrainer>
+          <AppBarContrainer>
             <Navigation />
             {!isRefreshing && (isLoggedIn ? <UserMenu /> : <AuthNav />)}
-          </HeaderContrainer>
+          </AppBarContrainer>
         </Section>
       </Container>
-    </HeaderBox>
+    </AppBarBox>
   );
 };
