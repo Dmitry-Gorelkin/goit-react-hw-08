@@ -3,7 +3,7 @@ import { Button } from '../UI/Button/Button.styled';
 import { FormContrainer, FormLabel, FormInput } from '../UI/Form/Form.styled';
 import { ContactFormContrainer, ContactFormCloseIcon } from './ContactForm.styled';
 import toast from 'react-hot-toast';
-import { addContacts } from '../../redux/conytacts/operetion.js';
+import { addContacts } from '../../redux/conytacts/operetions.js';
 import { selectIsLoading } from '../../redux/conytacts/selectors.js';
 import { LoaderRings } from '../UI/LoaderRings/LoaderRings';
 

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '../UI/Button/Button.styled';
 import { selectUser } from '../../redux/auth/selectors';
-import { logOut } from '../../redux/auth/operetion.js';
+import { logOut } from '../../redux/auth/operetions.js';
 import { selectUserIsLoading } from '../../redux/auth/selectors';
 import { LoaderRings } from '../UI/LoaderRings/LoaderRings';
 import toast from 'react-hot-toast';
