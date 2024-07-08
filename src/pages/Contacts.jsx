@@ -3,7 +3,7 @@ import { ContactActions } from '../components/ContactActions/ContactActions';
 import { ContactList } from '../components/ContactList/ContactList';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchContacts } from '../redux/conytacts/operations';
+import { fetchContacts } from '../redux/contacts/operations';
 
 const Contacts = () => {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import { ContactCard } from '../ContactCard/ContactCard';
 import { useSelector } from 'react-redux';
 import { Section } from '../UI/Section/Section.styled';
-import { selectVisibleContacts, selectIsLoadingFech } from '../../redux/conytacts/selectors';
+import { selectVisibleContacts, selectIsLoadingFech } from '../../redux/contacts/selectors';
 import { ContactListContrainer } from './ContactList.styled';
 import { LoaderPuff } from '../UI/LoaderPuff/LoaderPuff';
 import { NoContacts } from '../NoContacts/NoContacts';
