@@ -1,11 +1,14 @@
 import { ContactCard } from '../ContactCard/ContactCard';
 import { useSelector } from 'react-redux';
 import { Section } from '../UI/Section/Section.styled';
-import { selectVisibleContacts } from '../../redux/conytacts/selectors';
+import { selectVisibleContacts, selectIsLoadingFech } from '../../redux/conytacts/selectors';
 import { ContactListContrainer } from './ContactList.styled';
+import { LoaderPuff } from '../UI/LoaderPuff/LoaderPuff';
+import { NoContacts } from '../NoContacts/NoContacts';
 
 export const ContactList = () => {
   const contacts = useSelector(selectVisibleContacts);
+  const isLoadingFech = useSelector(selectIsLoadingFech);
 
   return (
     <Section>
@@ -17,6 +20,10 @@ export const ContactList = () => {
           })}
         </ContactListContrainer>
       )}
+
+      {contacts.length === 0 && !isLoadingFech && <NoContacts />}
+
+      {isLoadingFech && <LoaderPuff />}
     </Section>
   );
 };

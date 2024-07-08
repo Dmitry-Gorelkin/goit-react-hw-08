@@ -5,10 +5,11 @@ import { Container } from '../UI/Conteiner/Container.styled';
 import { Section } from '../UI/Section/Section.styled';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { HeaderBox, HeaderContrainer } from './Header.styled';
-import { selectUserIsLoggedIn } from '../../redux/auth/selectors';
+import { selectUserIsLoggedIn, selectUserIsRefreshing } from '../../redux/auth/selectors';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectUserIsLoggedIn);
+  const isRefreshing = useSelector(selectUserIsRefreshing);
 
   return (
     <HeaderBox>
@@ -16,7 +17,7 @@ export const Header = () => {
         <Section>
           <HeaderContrainer>
             <Navigation />
-            {isLoggedIn ? <UserMenu /> : <AuthNav />}
+            {!isRefreshing && (isLoggedIn ? <UserMenu /> : <AuthNav />)}
           </HeaderContrainer>
         </Section>
       </Container>

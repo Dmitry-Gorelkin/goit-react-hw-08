@@ -40,21 +40,26 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
-export const refreshUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
-  const state = thunkAPI.getState();
-  const persistedToken = state.auth.token;
+export const refreshUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
 
-  /* ПЕРЕДЕЛАТЬ */
-  if (!persistedToken) {
-    return thunkAPI.rejectWithValue('Unable to fetch user');
-  }
-  /* ПЕРЕДЕЛАТЬ */
+    try {
+      setAuthHeader(persistedToken);
+      const res = await axios.get('/users/current');
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+  {
+    condition: (_, { getState }) => {
+      const reduxState = getState();
+      const savedToken = reduxState.auth.token;
 
-  try {
-    setAuthHeader(persistedToken);
-    const res = await axios.get('/users/current');
-    return res.data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+      return savedToken !== null;
+    },
   }
-});
+);
