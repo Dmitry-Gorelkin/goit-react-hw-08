@@ -11,7 +11,7 @@ import { RegistrationFormContrainer } from './RegistrationForm.styled';
 import { Button } from '../UI/Button/Button.styled';
 import { LoaderRings } from '../UI/LoaderRings/LoaderRings';
 import { selectUserIsLoading } from '../../redux/auth/selectors';
-import { registation } from '../../redux/auth/operetions';
+import { registation } from '../../redux/auth/operations';
 import toast from 'react-hot-toast';
 
 export const RegistrationForm = () => {

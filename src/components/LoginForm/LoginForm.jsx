@@ -10,7 +10,7 @@ import { LoginFormContrainer } from './LoginForm.styled';
 import { LoaderRings } from '../UI/LoaderRings/LoaderRings';
 import { Button } from '../UI/Button/Button.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { logIn } from '../../redux/auth/operetions';
+import { logIn } from '../../redux/auth/operations';
 import { selectUserIsLoading } from '../../redux/auth/selectors';
 import toast from 'react-hot-toast';
 

@@ -8,7 +8,7 @@ import {
   ContactCardBtn,
 } from './ContactCard.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContacts } from '../../redux/conytacts/operetions';
+import { deleteContacts } from '../../redux/conytacts/operations';
 import { selectIsLoading } from '../../redux/conytacts/selectors';
 import toast from 'react-hot-toast';
 
